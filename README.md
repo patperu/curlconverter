@@ -169,7 +169,7 @@ toJSON(parse_query(req[[1]]$data), pretty=TRUE)
 ### Spinning straw into gold
 
 ``` r
-curl_line <- c('curl "http://anasim.iet.unipi.it/moniqa/php/from_js.php" -H "Origin: http://anasim.iet.unipi.it" -H "Accept-Encoding: gzip, deflate" -H "Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4" -H "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36" -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" -H "Accept: */*" -H "Referer: http://anasim.iet.unipi.it/moniqa/" -H "X-Requested-With: XMLHttpRequest" -H "Connection: keep-alive" --data "deviceid=1&function_name=extract_measurements" --compressed')
+curl_line <- c('curl "http://anasim.iet.unipi.it/moniqa/php/from_js.php" -H "Origin: http://anasim.iet.unipi.it" -H "Accept-Encoding: gzip, deflate" -H "Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4" -H "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36" -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" -H "Accept: */*" -H "Referer: http://anasim.iet.unipi.it/moniqa/" -H "X-Requested-With: XMLHttpRequest" -H "Connection: keep-alive" --data "deviceid=65&function_name=extract_measurements" --compressed')
 
 get_data <- make_req(curl_line, quiet=TRUE)
 toJSON(content(get_data(), as="parsed"), pretty=TRUE)
@@ -179,376 +179,70 @@ toJSON(content(get_data(), as="parsed"), pretty=TRUE)
 #       "fk_sensortype": ["1"]
 #     },
 #     {
-#       "fk_sensortype": ["2"]
-#     },
-#     {
-#       "fk_sensortype": ["3"]
-#     },
-#     {
 #       "fk_sensortype": ["4"]
+#     },
+#     {
+#       "fk_sensortype": ["6"]
+#     },
+#     {
+#       "fk_sensortype": ["8"]
 #     }
 #   ],
 #   "measures": [
 #     {
-#       "measure": ["5"],
+#       "measure": ["65"],
 #       "fk_sensortype": ["1"],
-#       "date": ["1454976000000"]
+#       "date": ["1454972400000"]
 #     },
 #     {
-#       "measure": ["0"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1454976000000"]
-#     },
-#     {
-#       "measure": ["90"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454976000000"]
-#     },
-#     {
-#       "measure": ["4"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1454979600000"]
-#     },
-#     {
-#       "measure": ["0"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1454979600000"]
-#     },
-#     {
-#       "measure": ["89"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454979600000"]
+#       "measure": ["16"],
+#       "fk_sensortype": ["4"],
+#       "date": ["1454972400000"]
 #     },
 #     {
 #       "measure": ["7"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1454983200000"]
+#       "fk_sensortype": ["6"],
+#       "date": ["1454972400000"]
 #     },
 #     {
-#       "measure": ["1"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1454983200000"]
-#     },
-#     {
-#       "measure": ["76"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454983200000"]
-#     },
-#     {
-#       "measure": ["74"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454986800000"]
-#     },
-#     {
-#       "measure": ["18"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1454990400000"]
-#     },
-#     {
-#       "measure": ["0"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1454990400000"]
-#     },
-#     {
-#       "measure": ["67"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454990400000"]
-#     },
-#     {
-#       "measure": ["30"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1454994000000"]
-#     },
-#     {
-#       "measure": ["1"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1454994000000"]
-#     },
-#     {
-#       "measure": ["49"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454994000000"]
-#     },
-#     {
-#       "measure": ["49"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1454997600000"]
-#     },
-#     {
-#       "measure": ["4"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1454997600000"]
-#     },
-#     {
-#       "measure": ["29"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1454997600000"]
-#     },
-#     {
-#       "measure": ["65"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455001200000"]
-#     },
-#     {
-#       "measure": ["15"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455001200000"]
-#     },
-#     {
-#       "measure": ["16"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455001200000"]
-#     },
-#     {
-#       "measure": ["63"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455004800000"]
-#     },
-#     {
-#       "measure": ["16"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455004800000"]
-#     },
-#     {
-#       "measure": ["25"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455004800000"]
-#     },
-#     {
-#       "measure": ["41"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455008400000"]
-#     },
-#     {
-#       "measure": ["3"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455008400000"]
-#     },
-#     {
-#       "measure": ["42"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455008400000"]
-#     },
-#     {
-#       "measure": ["34"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455012000000"]
-#     },
-#     {
-#       "measure": ["3"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455012000000"]
-#     },
-#     {
-#       "measure": ["51"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455012000000"]
-#     },
-#     {
-#       "measure": ["27"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455015600000"]
-#     },
-#     {
-#       "measure": ["3"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455015600000"]
-#     },
-#     {
-#       "measure": ["65"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455015600000"]
-#     },
-#     {
-#       "measure": ["15"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455019200000"]
-#     },
-#     {
-#       "measure": ["2"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455019200000"]
-#     },
-#     {
-#       "measure": ["82"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455019200000"]
-#     },
-#     {
-#       "measure": ["19"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455022800000"]
-#     },
-#     {
-#       "measure": ["1"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455022800000"]
-#     },
-#     {
-#       "measure": ["75"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455022800000"]
-#     },
-#     {
-#       "measure": ["21"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455030000000"]
-#     },
-#     {
-#       "measure": ["2"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455030000000"]
-#     },
-#     {
-#       "measure": ["66"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455030000000"]
-#     },
-#     {
-#       "measure": ["27"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455033600000"]
-#     },
-#     {
-#       "measure": ["2"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455033600000"]
-#     },
-#     {
-#       "measure": ["59"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455033600000"]
-#     },
-#     {
-#       "measure": ["48"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455037200000"]
-#     },
-#     {
-#       "measure": ["3"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455037200000"]
-#     },
-#     {
-#       "measure": ["33"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455037200000"]
-#     },
-#     {
-#       "measure": ["69"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455040800000"]
-#     },
-#     {
-#       "measure": ["12"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455040800000"]
-#     },
-#     {
-#       "measure": ["15"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455040800000"]
-#     },
-#     {
-#       "measure": ["63"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455044400000"]
-#     },
-#     {
-#       "measure": ["8"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455044400000"]
-#     },
-#     {
-#       "measure": ["15"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455044400000"]
-#     },
-#     {
-#       "measure": ["54"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455048000000"]
-#     },
-#     {
-#       "measure": ["3"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455048000000"]
-#     },
-#     {
-#       "measure": ["27"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455048000000"]
-#     },
-#     {
-#       "measure": ["48"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455051600000"]
-#     },
-#     {
-#       "measure": ["2"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455051600000"]
-#     },
-#     {
-#       "measure": ["31"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455051600000"]
-#     },
-#     {
-#       "measure": ["30"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455055200000"]
-#     },
-#     {
-#       "measure": ["1"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455055200000"]
-#     },
-#     {
-#       "measure": ["50"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455055200000"]
-#     },
-#     {
-#       "measure": ["15"],
-#       "fk_sensortype": ["1"],
-#       "date": ["1455058800000"]
-#     },
-#     {
-#       "measure": ["0"],
-#       "fk_sensortype": ["2"],
-#       "date": ["1455058800000"]
-#     },
-#     {
-#       "measure": ["64"],
-#       "fk_sensortype": ["3"],
-#       "date": ["1455058800000"]
-#     },
-#     {
-#       "measure": ["20"],
-#       "fk_sensortype": ["4"],
-#       "date": ["1455058800000"]
+#       "measure": ["0.4"],
+#       "fk_sensortype": ["8"],
+#       "date": ["1454972400000"]
 #     }
 #   ]
 # }
+
+fromJSON(content(get_data(), as="text", encoding = "UTF-8"))
+# $sensors
+#   fk_sensortype
+# 1             1
+# 2             4
+# 3             6
+# 4             8
+# 
+# $measures
+#   measure fk_sensortype          date
+# 1      65             1 1454972400000
+# 2      16             4 1454972400000
+# 3       7             6 1454972400000
+# 4     0.4             8 1454972400000
 ```
 
 That also sends this to the console:
 
 ``` r
-VERB(verb = "POST", 
-     url = "http://anasim.iet.unipi.it/moniqa/php/from_js.php", 
-     add_headers(Origin = "http://anasim.iet.unipi.it", 
-                 `Accept-Encoding` = "gzip, deflate", 
-                 `Accept-Language` = "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4", 
-                 `User-Agent` = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36", 
-                 Accept = "*/*", 
-                 Referer = "http://anasim.iet.unipi.it/moniqa/", 
-                 `X-Requested-With` = "XMLHttpRequest", 
-                 Connection = "keep-alive"), 
-     body = list(deviceid = "1", 
+httr::VERB(verb = "POST", url = "http://anasim.iet.unipi.it/moniqa/php/from_js.php", 
+            add_headers(Origin = "http://anasim.iet.unipi.it", 
+                  `Accept-Encoding` = "gzip, deflate", 
+                  `Accept-Language` = "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4", 
+                  `User-Agent` = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36", 
+                  Accept = "*/*", 
+                  Referer = "http://anasim.iet.unipi.it/moniqa/", 
+                  `X-Requested-With` = "XMLHttpRequest", 
+                  Connection = "keep-alive"), 
+            body = list(deviceid = "65", 
                  function_name = "extract_measurements"), 
-     encode = "form") -> tmp
+            encode = "form") -> tmp
 
 toJSON(content(tmp), pretty=TRUE)
 ```
@@ -560,11 +254,11 @@ library(curlconverter)
 library(testthat)
 
 date()
-# [1] "Thu Feb 11 05:37:21 2016"
+# [1] "Thu Feb 11 13:11:56 2016"
 
 test_dir("tests/")
-# Warning in c(5L, 5L, 5L, 3L, 4L, 5L, 4L) == sapply(sapply(sapply(list.files(system.file("extdata/", : longer object
-# length is not a multiple of shorter object length
+# Warning in c(5L, 5L, 5L, 3L, 4L, 5L, 4L) == sapply(sapply(sapply(list.files(system.file("extdata/", : Länge des längeren Objektes
+#    ist kein Vielfaches der Länge des kürzeren Objektes
 # testthat results ========================================================================================================
 # OK: 1 SKIPPED: 0 FAILED: 0
 ```

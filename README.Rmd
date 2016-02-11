@@ -83,28 +83,29 @@ toJSON(parse_query(req[[1]]$data), pretty=TRUE)
 ### Spinning straw into gold
 
 ```{r}
-curl_line <- c('curl "http://anasim.iet.unipi.it/moniqa/php/from_js.php" -H "Origin: http://anasim.iet.unipi.it" -H "Accept-Encoding: gzip, deflate" -H "Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4" -H "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36" -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" -H "Accept: */*" -H "Referer: http://anasim.iet.unipi.it/moniqa/" -H "X-Requested-With: XMLHttpRequest" -H "Connection: keep-alive" --data "deviceid=1&function_name=extract_measurements" --compressed')
+curl_line <- c('curl "http://anasim.iet.unipi.it/moniqa/php/from_js.php" -H "Origin: http://anasim.iet.unipi.it" -H "Accept-Encoding: gzip, deflate" -H "Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4" -H "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36" -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" -H "Accept: */*" -H "Referer: http://anasim.iet.unipi.it/moniqa/" -H "X-Requested-With: XMLHttpRequest" -H "Connection: keep-alive" --data "deviceid=65&function_name=extract_measurements" --compressed')
 
 get_data <- make_req(curl_line, quiet=TRUE)
 toJSON(content(get_data(), as="parsed"), pretty=TRUE)
+
+fromJSON(content(get_data(), as="text", encoding = "UTF-8"))
 ```
 
 That also sends this to the console:
 
 ```{r eval=FALSE}
-VERB(verb = "POST", 
-     url = "http://anasim.iet.unipi.it/moniqa/php/from_js.php", 
-     add_headers(Origin = "http://anasim.iet.unipi.it", 
-                 `Accept-Encoding` = "gzip, deflate", 
-                 `Accept-Language` = "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4", 
-                 `User-Agent` = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36", 
-                 Accept = "*/*", 
-                 Referer = "http://anasim.iet.unipi.it/moniqa/", 
-                 `X-Requested-With` = "XMLHttpRequest", 
-                 Connection = "keep-alive"), 
-     body = list(deviceid = "1", 
+httr::VERB(verb = "POST", url = "http://anasim.iet.unipi.it/moniqa/php/from_js.php", 
+            add_headers(Origin = "http://anasim.iet.unipi.it", 
+                  `Accept-Encoding` = "gzip, deflate", 
+                  `Accept-Language` = "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4", 
+                  `User-Agent` = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36", 
+                  Accept = "*/*", 
+                  Referer = "http://anasim.iet.unipi.it/moniqa/", 
+                  `X-Requested-With` = "XMLHttpRequest", 
+                  Connection = "keep-alive"), 
+            body = list(deviceid = "65", 
                  function_name = "extract_measurements"), 
-     encode = "form") -> tmp
+            encode = "form") -> tmp
 
 toJSON(content(tmp), pretty=TRUE)
 ```
